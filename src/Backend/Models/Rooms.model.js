@@ -1,4 +1,3 @@
-import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 const roomSchema = new mongoose.Schema({
   hostel_name: {
@@ -7,13 +6,13 @@ const roomSchema = new mongoose.Schema({
   },
   rent: {
     required: true,
-    type: Number,
+    type: String,
   },
   address: {
     type: String,
     required: true,
   },
-  no_of_persons: {
+  no_of_person: {
     type: Number,
     required: true,
   },
@@ -34,18 +33,8 @@ const roomSchema = new mongoose.Schema({
     type : String, 
     required : true
   },
-  image_urls: [{
-    type : String, 
-    required : true
-  }],
-  furnished: {
-    type : Boolean, 
-    required : true
-  },
-  desc : {
-    type : String, 
-    required : true
-  }
-}, Timestamp = true);
+ 
+ 
+}, {timestamps : true});
 
-const sample = mongoose.model("samples", roomSchema);
+export const mycollections = mongoose.model("mycollections", roomSchema);

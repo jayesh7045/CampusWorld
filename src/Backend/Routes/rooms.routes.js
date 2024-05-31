@@ -1,3 +1,4 @@
 import express from "express";
-const router = express.Router;
-router.get('/rooms', getRoomDetails);
+import { getRoomDetails } from "../Controllers/getRoomDetails.js";
+export const roomsRoute = express.Router();
+roomsRoute.get('/getallrooms', getRoomDetails);
