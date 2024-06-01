@@ -3,7 +3,7 @@ export const getRoomDetails = async (req, res)=>{
     try{
         console.log(mycollections);
         const data = await mycollections.find({});
-        console.log(data);
+        // console.log(data);
         res.status(200).json({
             success : true, 
             data : data
